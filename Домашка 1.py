@@ -107,7 +107,7 @@ class Complex:
             return Complex(self.re + other.re, self.img + other.img)
         if isinstance(other, (int, float)):
             return Complex(self.re + other, self.img)
-        print("TypeError: unsupported operand type(s) for +: 'Complex' and 'str'")
+        raise TypeError: unsupported operand type(s) for +: 'Complex' and 'str'
 
     def __mul__(self, other):
         '''
@@ -128,7 +128,7 @@ class Complex:
             return Complex(self.re * other.re - self.img * other.img, self.re * other.img + self.img * other.re)
         if isinstance(other, (int, float)):
             return Complex(self.re * other, self.img * other)
-        print("TypeError: unsupported operand type(s) for *: 'Complex' and 'str'")
+        raise TypeError: unsupported operand type(s) for *: 'Complex' and 'str'
     
     def __sub__(self, other):
         '''
@@ -149,7 +149,7 @@ class Complex:
             return Complex(self.re - other.re, self.img - other.img)
         if isinstance(other, (int, float)):
             return Complex(self.re - other, self.img)
-        print("TypeError: unsupported operand type(s) for -: 'Complex' and 'str'")
+        raise TypeError: unsupported operand type(s) for -: 'Complex' and 'str'
 
     def __truediv__(self, other):
         '''
@@ -166,12 +166,12 @@ class Complex:
         >>> Complex(6, 7) / 'hello_raise'
         TypeError: unsupported operand type(s) for /: 'Complex' and 'str'
         '''
-         if isinstance(other, Complex):
+        if isinstance(other, Complex):
             d = other.re**2 + other.img**2
             return Complex((self.re * other.re + self.img * other.img) / d, (self.img * other.re - self.re*other.img) / d)
         if isinstance(other, (int, float)):
             return Complex(self.re / other, self.img / other)
-        print("TypeError: unsupported operand type(s) for /: 'Complex' and 'str'")
+        raise TypeError: unsupported operand type(s) for /: 'Complex' and 'str'
 
     def __abs__(self):
         '''
